@@ -1,0 +1,104 @@
+<%- layout('/layouts/boilerplate') %>
+
+
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis"><%= data.title %></h1>
+    <div class="col-md-6 mx-auto">
+        <p class="lead mb-4"><%= data.description %></p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      
+        </div>
+    </div>
+</div>
+
+<div class="container-sm ">
+    <div class="row justify-content-center mt-2">
+        <div class="col">
+            <div class="card">
+                <!-- Show Image -->
+                <img class="card-img-top" src="<%= data.image.url %>" alt="show image" style="max-width: 100%; height: auto;">
+                <div class="card-body">
+                    <!-- Owner -->
+                    <p class="listing-card-text text-muted">Owned by <%= data.owner.username %></p>
+                    <!-- Title -->
+                    <h5 class="card-title"><%= data.title %></h5>
+                    <!-- Price -->
+                    <h6 class="listing-card-text">
+                        <% if (data.price) { %>
+                            <span>&#8377; <%= data.price.toLocaleString("en-IN") %></span>
+                        <% } else { %>
+                            <span>Price not available</span>
+                        <% } %>
+                    </h6>
+                    <!-- Location -->
+                    <p class="listing-card-text">Location: <%= data.location %>, <%= data.country %></p>
+                </div>
+
+                <!-- Edit and Delete buttons -->
+                <% if(currentUser && currentUser._id.equals(data.owner._id)) { %>
+                <div class="card-footer">
+                    <a href="/hostings/<%= data._id %>/edit" class="btn btn-primary mr-2">Edit</a>
+                    <form action="/hostings/<%= data._id %>?_method=DELETE" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-danger ms-3">Delete</button>
+                    </form>
+                </div>
+                <% } %>
+            </div>
+
+            <!-- Leave a review section -->
+            <% if(currentUser) { %>
+            <div class="mt-4">
+                <h4 class="mt-4">Leave a review</h4>
+                <form action="/hostings/<%= data._id %>/reviews" method="POST" novalidate class="needs-validation">
+                    <fieldset class="starability-slot">
+                        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="1" checked aria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="rating" value="1" />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="rating" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="rating" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="rating" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="rating" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="comment" class="form-label">Comment</label>
+                        <textarea required name="comment" id="comment" rows="5" class="form-control" placeholder="Leave a comment!"></textarea>
+                        <div class="invalid-feedback">Please add some comments!</div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </form>
+            </div>
+            <% } %>
+            <hr>
+
+            <!-- All Reviews section -->
+            <div class="mt-4">
+                <% if(data.reviews && data.reviews.length > 0) { %>
+                <h3>All Reviews</h3>
+                <% } %>
+                <% if(currentUser) { %>
+                <div class="list-group mt-3">
+                    <% for (let review of data.reviews) { %>
+                    <div class="list-group-item">
+                        <h4 class="card-title"><%= review.author.username %></h4>
+                        <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                        <p class="card-title"><%= review.comment %></p>
+                        <p class="mb-0"></p>
+                        <form action="/hostings/<%= data._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
+                            <button class="btn btn-sm btn-outline-danger mt-2">Delete</button>
+                        </form>
+                    </div>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+
+            
+
+        </div>
+    </div>
+</div>

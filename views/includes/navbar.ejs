@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <a class="navbar-brand" href="/hostings/home"><i style="color: rgb(24, 204, 204);" class="fa-brands fa-staylinked ms-3"></i></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-item nav-link mt-1.9 text-white fs-5 " href="/hostings/home">Home</a>
+          <a class="nav-item nav-link mb-1.8" href="/hostings/new">
+              <button type="button" class="btn btn-primary ms-3"><span>Start hosting</span></button>
+          </a>
+      </div>
+
+      
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-item nav-link" href="/hostings">
+          <button class="btn btn-primary">Explore</button>
+      </a>
+          <% if(!currentUser){ %>
+         
+          <a class="nav-item nav-link" href="/signup">
+              <button class="btn btn-primary">Sign Up</button>
+          </a>
+          <a class="nav-item nav-link" href="/login">
+              <button class="btn btn-primary">Login</button>
+          </a>
+          <% } %>
+          <% if(currentUser) { %>
+          <a class="nav-item nav-link" href="/logout">
+              <button class="btn btn-primary">Logout</button>
+          </a>
+          <% } %>
+      </div>
+  </div>
+</nav>

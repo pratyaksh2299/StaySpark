@@ -1,0 +1,81 @@
+<%- layout('/layouts/boilerplate') %>
+<main>
+    <section class="py-5 text-center container">
+
+
+      <div class="navbar-nav col-6  offset-3 mb-4  ">
+        <form class="d-flex" role="search" action="/hostings/find" method="post">
+          <input class="form-control me-2 bg-light text-primary  border-dark" name="city" type="text" placeholder="Search Destinations" aria-label="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+
+      <div class="row py-lg-5">
+       
+        <div class="col-lg-6 col-md-8 mx-auto">
+
+
+          <h1 class="fw-light fs-1 fw-bold home-text">Welcome to <span style="color: #0d6efd;">StaySpark</span></h1>
+          <p class="lead text-body-secondary">where every stay is a gateway to new experiences. Discover a curated
+            selection of homes, apartments, and unique stays crafted for every journey. Book your next adventure
+            effortlessly and embark on unforgettable travels with us.</p>
+          <p>
+            <a href="/hostings" class="btn btn-primary my-2">explore</a>
+            <a href="/hostings/new" class="btn btn-secondary my-2">Start Hosting</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img   height="316" src="https://images.unsplash.com/photo-1468824357306-a439d58ccb1c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHNlYXZ2aWV3JTIwaG90ZWx8ZW58MHx8MHx8fDA%3D"
+                alt="">
+              <div class=" ms-3  mb-3">
+                <p class="card-text mt-2">Lapedio Villa</p>
+                <div class="rating text-muted">
+                  <span class="badge bg-primary me-1">4.5</span> <!-- Added `me-1` class for margin -->
+                  <span>(24 reviews)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col">
+            <div class="card shadow-sm">
+              <img height="316" src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNlYSUyMHZpd3xlbnwwfHwwfHx8MA%3D%3D">
+             
+              <div class=" ms-3  mb-3">
+                <p class="card-text mt-2">Mojito Villa</p>
+                <div class="rating text-muted">
+                  <span class="badge bg-primary me-1">3.5</span> <!-- Added `me-1` class for margin -->
+                  <span>(241,114 reviews)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <img  height="316" src="https://plus.unsplash.com/premium_photo-1697730276864-817396f614ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2VhJTIwdmllJTIwcmVzb3J0c3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="">
+              <div class=" ms-3  mb-3">
+                <p class="card-text mt-2">Lapedio Villa</p>
+                <div class="rating text-muted">
+                  <span class="badge bg-primary me-1">5.0</span> <!-- Added `me-1` class for margin -->
+                  <span>(24,011 reviews)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  </main>
+  

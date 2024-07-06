@@ -1,0 +1,153 @@
+body {
+  display: flex;
+  flex-direction: column; 
+   min-height: 100vh;
+  transition: all 2s ease-in-out;
+   /* Initial gradient */
+  font-family: Arial, sans-serif;
+  animation: gradientAnimation 10s ease infinite alternate; /* Animation settings */
+  
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  100% {
+    background-position: 100% 50%; /* End position */
+  }
+}
+
+/* Rest of your existing styles remain unchanged */
+
+
+/* Navbar styles */
+.navbar {
+  height: 4.5rem;
+  background-color:#003b95 !important; /* Blue background color */
+  color: white; /* Text color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #222222 !important;
+  background-color: white;
+}
+
+.fa-compass {
+  color: rgb(254, 35, 35);
+  font-size: 2.3rem;
+}
+
+.container {
+  flex: 1;
+}
+
+
+/* Footer styles */
+.foo{
+  width: 100%;
+}
+.f-info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(57, 53, 80);
+  height: 8rem;
+}
+
+.f-info-socials {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.f-info-links {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.f-info i {
+  margin-right: 1rem;
+}
+
+.f-info a {
+  text-decoration: none;
+}
+
+.f-info a:hover {
+  text-decoration: underline;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.listing-link:hover {
+  transform: translateY(-10px);
+}
+
+.listing-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.listing-card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.listing-card-body {
+  padding: 15px;
+}
+
+.listing-card-text {
+  font-size: 1rem;
+  font-weight: 1800;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  letter-spacing: .2rem;
+  color: #164c75;
+}
+
+.listing-card-price {
+  font-size: 16px;
+  color: #555;
+}

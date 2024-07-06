@@ -1,0 +1,47 @@
+<%- layout('/layouts/boilerplate') %>
+<div class="row mt-3">
+    <div class="col-8 offset-2" >
+    <form action="/hostings/<%= data._id %>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input  name="title" id="title" value="<%= data.title %>" class="form-control" required>
+        <div class="invalid-feedback">
+            Please choose a valid title.
+          </div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea required name="description" id="description" class="form-control"><%= data.description %></textarea>
+        
+    </div>
+    <div class="mb-3">
+        <label for="image-url" class="form-label">Upload</label>
+        <input type="file" name="image"  class="form-control">
+    </div>
+    <div class="row">
+        <div class="mb-3 col-3">
+            <label for="price" class="form-label">Price</label>
+            <input  name="price" id="price" value="<%= data.price %>" class="form-control" required>
+            <div class="invalid-feedback">
+                Please choose a valid price.
+              </div>
+        </div>
+        <div class="mb-3 col-4">
+            <label for="location" class="form-label">Location</label>
+            <input  name="location" value="<%= data.location %>" class="form-control" required> 
+            <div class="invalid-feedback">
+                Please choose a valid Location.
+              </div> 
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input name="country" value="<%= data.country %>" class="form-control" required>
+        <div class="invalid-feedback">
+            Please choose a valid country.
+          </div>
+    </div>
+    <button class="btn btn-dark submit-button">Submit</button>
+</form>
+</div>
+</div>
